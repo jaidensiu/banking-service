@@ -11,3 +11,5 @@
 - [TablePlus](https://tableplus.com/)
 - [Golang-Migrate](https://github.com/golang-migrate/migrate)
 - [sqlc](https://sqlc.dev/)
+- [Go Postgres Database Driver](https://github.com/lib/pq)
+- [Testify](https://github.com/stretchr/testify)
