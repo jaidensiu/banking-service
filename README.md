@@ -10,3 +10,4 @@
 - [Docker Postgres Image](https://hub.docker.com/_/postgres)
 - [TablePlus](https://tableplus.com/)
 - [Golang-Migrate](https://github.com/golang-migrate/migrate)
+- [sqlc](https://sqlc.dev/)
