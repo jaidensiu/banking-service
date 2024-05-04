@@ -1,4 +1,4 @@
-# Gopher Bank Service
+# Gopher Banking Service
 
 ## Database Schema
 
