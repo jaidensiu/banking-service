@@ -2,7 +2,7 @@ package db
 
 import (
 	"context"
-	"github.com/jaidensiu/Gopher-Bank-Service/util"
+	"github.com/jaidensiu/Gopher-Bank/util"
 	"github.com/stretchr/testify/require"
 	"testing"
 	"time"

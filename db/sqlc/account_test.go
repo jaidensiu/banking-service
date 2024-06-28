@@ -3,7 +3,7 @@ package db
 import (
 	"context"
 	"database/sql"
-	"github.com/jaidensiu/Gopher-Bank-Service/util"
+	"github.com/jaidensiu/Gopher-Bank/util"
 	"github.com/stretchr/testify/require"
 	"testing"
 	"time"

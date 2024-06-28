@@ -1,4 +1,4 @@
-module github.com/jaidensiu/Gopher-Bank-Service
+module github.com/jaidensiu/Gopher-Bank
 
 go 1.22.2
 
