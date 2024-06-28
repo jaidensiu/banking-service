@@ -52,3 +52,4 @@ View container logs:
 - [sqlc](https://sqlc.dev/)
 - [Go Postgres Database Driver](https://github.com/lib/pq)
 - [Testify](https://github.com/stretchr/testify)
+- [GitHub Actions PostgreSQL Service Containers](https://docs.github.com/en/actions/using-containerized-services/creating-postgresql-service-containers)
