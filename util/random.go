@@ -8,13 +8,16 @@ import (
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
+var rng *rand.Rand
+
 func init() {
-	rand.Seed(time.Now().UTC().UnixNano())
+	source := rand.NewSource(time.Now().UTC().UnixNano())
+	rng = rand.New(source)
 }
 
 // RandomInt generates a random integer between min and max
 func RandomInt(min, max int64) int64 {
-	return rand.Int63n(max-min+1) + min
+	return rng.Int63n(max-min+1) + min
 }
 
 // RandomString generates a random string of length n

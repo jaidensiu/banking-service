@@ -2,10 +2,11 @@ package db
 
 import (
 	"context"
-	"github.com/jaidensiu/Gopher-Bank/util"
-	"github.com/stretchr/testify/require"
 	"testing"
 	"time"
+
+	"github.com/jaidensiu/Gopher-Bank/util"
+	"github.com/stretchr/testify/require"
 )
 
 func createRandomTransfer(t *testing.T, account1, account2 Account) Transfer {

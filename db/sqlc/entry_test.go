@@ -2,10 +2,11 @@ package db
 
 import (
 	"context"
-	"github.com/jaidensiu/Gopher-Bank/util"
-	"github.com/stretchr/testify/require"
 	"testing"
 	"time"
+
+	"github.com/jaidensiu/Gopher-Bank/util"
+	"github.com/stretchr/testify/require"
 )
 
 func createRandomEntry(t *testing.T, account Account) Entry {
