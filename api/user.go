@@ -79,7 +79,7 @@ type loginUserRequest struct {
 }
 
 type loginUserResponse struct {
-	AccessToken string       `json:"access_token`
+	AccessToken string       `json:"access_token"`
 	User        userResponse `json:"user"`
 }
 
