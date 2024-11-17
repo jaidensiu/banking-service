@@ -1,4 +1,4 @@
-# Simple Bank Service
+# Simple Bank
 
 ## Database Schema
 

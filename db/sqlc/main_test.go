@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/jaidensiu/Gopher-Bank/util"
+	"github.com/jaidensiu/simple-bank/util"
 	_ "github.com/lib/pq"
 )
 

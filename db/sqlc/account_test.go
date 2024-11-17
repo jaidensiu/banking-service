@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/jaidensiu/Gopher-Bank/util"
+	"github.com/jaidensiu/simple-bank/util"
 	"github.com/stretchr/testify/require"
 )
 

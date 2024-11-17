@@ -1,4 +1,4 @@
-module github.com/jaidensiu/Gopher-Bank
+module github.com/jaidensiu/simple-bank
 
 go 1.22.2
 

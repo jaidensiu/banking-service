@@ -4,9 +4,10 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	"github.com/gin-gonic/gin"
-	db "github.com/jaidensiu/Gopher-Bank/db/sqlc"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+	db "github.com/jaidensiu/simple-bank/db/sqlc"
 )
 
 type transferRequest struct {
