@@ -1,6 +1,6 @@
 ## Database Schema
 
-![Database schema](images/database_schema.png)
+![Database Schema](images/database_schema.png)
 
 ## Docker Commands
 
