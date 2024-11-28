@@ -1,8 +1,8 @@
-## Database Schema
+## Database schema
 
-![Database Schema](images/database_schema.png)
+The database schema can be found [here](https://dbdiagram.io/d/banking-service-661a381503593b6b61e4d3dc).
 
-## Docker Commands
+## Docker commands
 
 List running containers:
 ```bash
@@ -64,7 +64,7 @@ View container logs:
 docker logs <container_name_or_id>
 ```
 
-## Tools and References
+## Tools and references
 
 - [DBDiagram](https://dbdiagram.io/)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
