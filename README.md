@@ -4,7 +4,7 @@
 
 ## Project details
 
-A banking web service with secure account management, balance tracking, and money transfers. This project is currently in construction.
+A banking web service for secure account management, balance tracking, and money transfers. This project is currently in construction.
 
 ## Tech stack
 
