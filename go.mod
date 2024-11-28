@@ -1,4 +1,4 @@
-module github.com/jaidensiu/simple-bank
+module github.com/jaidensiu/banking-service
 
 go 1.22.2
 

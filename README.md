@@ -1,11 +1,10 @@
-# Simple Bank
+# Banking Service
 
 ![Gopher Kubernetes](images/gopher_k8s.png)
 
 ## Project details
 
-A backend web service with secure account management, balance tracking, and money transfers. Features include:
-- TODO
+A banking web service with secure account management, balance tracking, and money transfers. This project is currently in construction.
 
 ## Tech stack
 

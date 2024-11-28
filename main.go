@@ -5,9 +5,9 @@ import (
 	"log"
 
 	_ "github.com/golang/mock/mockgen/model"
-	"github.com/jaidensiu/simple-bank/api"
-	db "github.com/jaidensiu/simple-bank/db/sqlc"
-	"github.com/jaidensiu/simple-bank/util"
+	"github.com/jaidensiu/banking-service/api"
+	db "github.com/jaidensiu/banking-service/db/sqlc"
+	"github.com/jaidensiu/banking-service/util"
 	_ "github.com/lib/pq"
 )
 
