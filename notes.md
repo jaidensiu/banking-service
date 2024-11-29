@@ -1,3 +1,12 @@
+## Banking service features
+
+- Create and manage accounts
+    - Owner, balance, currency
+- Record all balance changes
+    - Create an account entry for each change
+- Money transfer transaction
+    - Perform money transfer between 2 accounts consistently within a transaction
+
 ## Database schema
 
 The database schema can be found [here](https://dbdiagram.io/d/banking-service-661a381503593b6b61e4d3dc).
