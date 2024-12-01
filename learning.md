@@ -140,14 +140,44 @@ Higher isolation levels provide stronger guarantees of data consistency but may 
 
 Different RDBMS support different isolation levels based on their design goals, performance optimizations, and user requirements. Understanding the isolation levels supported by your chosen RDBMS and their implications can help you design robust and efficient database applications.
 
+## GitHub Actions
+
+GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.
+
+A workflow in GitHub Actions is basically an automated procedure that's made up of one or more jobs. To use GitHub Actions, we need to define a workflow in a YAML file to the GitHub workflows folder in our repository. Workflows can be triggered by 3 different ways:
+
+1. By an event that happens in the GitHub repository
+2. By setting a repetitive schedule
+3. By manually clicking on the run workflow button in GitHub
+
+Key concepts of GitHub Actions:
+- Workflow: a configurable automated process made up of one or more jobs
+- Job: a set of steps executed on the same runner; normal jobs can run in parallel and dependent jobs can run sequentially
+- Step: an individual task that can run commands or actions
+- Runner: a server that runs the workflows when they're triggered
+- Action: a custom application for the GitHub Actions platform that performs a complex but frequently repeated task
+
+Best Practices:
+- Keep workflows simple: break down complex workflows into smaller, manageable jobs
+- Use caching: cache dependencies to speed up workflow execution
+- Secure secrets: store sensitive data like API keys in GitHub Secrets
+- Monitor and debug: use the GitHub Actions logs to monitor and debug workflows
+- Reuse Actions: leverage existing actions from the GitHub Marketplace to avoid reinventing the wheel
+
+Benefits of CI:
+- Automation: automate repetitive tasks like running builds and tests
+- Consistency: ensure consistent environments for running builds and tests
+- Early bug detection: catch bugs early in the development process
+- Collaboration: improve collaboration by integrating CI into the pull request process
+
 ## What is a middleware?
 
 A middleware is a function that intercepts and processes requests before they reach the main handler in a web application. When a client sends a request to a specific API route on the server, the request will first pass through one or more middleware functions (such as logging or authentication middleware).
 
 For an authentication middleware, we can:
 
-1. Parse and check if the access token is valid.
-2. If the token is invalid or expired, abort the request and send a 401 status to the client.
-3. If the token is valid, store the parsed token payload in the context and forward the request to the next middleware or handler.
+1. Parse and check if the access token is valid
+2. If the token is invalid or expired, abort the request and send a 401 status to the client
+3. If the token is valid, store the parsed token payload in the context and forward the request to the next middleware or handler
 
 The handler will then read the token payload to identify the user and determine what actions they are authorized to perform and what data can be returned to the client.
