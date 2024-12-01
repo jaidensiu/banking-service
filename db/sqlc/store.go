@@ -6,7 +6,7 @@ import (
 	"fmt"
 )
 
-// Store provides all functions to execute db queries and transactions
+// Store provides all functions to execute database queries and transactions
 type Store interface {
 	Querier
 	TransferTx(ctx context.Context, arg TransferTxParams) (TransferTxResult, error)
@@ -18,29 +18,12 @@ type SQLStore struct {
 	*Queries
 }
 
-// NewStore creates a new Store
+// NewStore creates a new SQLStore
 func NewStore(db *sql.DB) Store {
 	return &SQLStore{
 		db:      db,
 		Queries: New(db),
 	}
-}
-
-// execTx executes a function within a database transaction
-func (store *SQLStore) execTx(ctx context.Context, fn func(*Queries) error) error {
-	tx, err := store.db.BeginTx(ctx, nil)
-	if err != nil {
-		return err
-	}
-	q := New(tx)
-	err = fn(q)
-	if err != nil {
-		if rbErr := tx.Rollback(); rbErr != nil {
-			return fmt.Errorf("tx error: %v, rb error: %v", err, rbErr)
-		}
-		return err
-	}
-	return tx.Commit()
 }
 
 // TransferTxParams contains the input parameters of the transfer transaction
@@ -59,10 +42,11 @@ type TransferTxResult struct {
 	ToEntry     Entry    `json:"to_entry"`
 }
 
-// TransferTx performs a money transfer from one account to the other
-// It creates a transfer record, add account entries, and update account balances within a single database transaction
+// TransferTx performs a money transfer from one account to the other. It creates a transfer record, add account
+// entries, and update account balances within a single database transaction.
 func (store *SQLStore) TransferTx(ctx context.Context, arg TransferTxParams) (TransferTxResult, error) {
 	var result TransferTxResult
+
 	err := store.execTx(ctx, func(q *Queries) error {
 		var err error
 
@@ -71,7 +55,9 @@ func (store *SQLStore) TransferTx(ctx context.Context, arg TransferTxParams) (Tr
 			ToAccountID:   arg.ToAccountID,
 			Amount:        arg.Amount,
 		}
+
 		result.Transfer, err = q.CreateTransfer(ctx, CreateTransferParams(transferTxParams))
+
 		if err != nil {
 			return err
 		}
@@ -80,6 +66,7 @@ func (store *SQLStore) TransferTx(ctx context.Context, arg TransferTxParams) (Tr
 			AccountID: arg.FromAccountID,
 			Amount:    -arg.Amount,
 		})
+
 		if err != nil {
 			return err
 		}
@@ -88,6 +75,7 @@ func (store *SQLStore) TransferTx(ctx context.Context, arg TransferTxParams) (Tr
 			AccountID: arg.ToAccountID,
 			Amount:    arg.Amount,
 		})
+
 		if err != nil {
 			return err
 		}
@@ -100,9 +88,29 @@ func (store *SQLStore) TransferTx(ctx context.Context, arg TransferTxParams) (Tr
 
 		return err
 	})
+
 	return result, err
 }
 
+// execTx executes a function within a database transaction. It starts a new transaction, executes the provided
+// function, and commits or rolls back the transaction based on the function's result.
+func (store *SQLStore) execTx(ctx context.Context, fn func(*Queries) error) error {
+	tx, err := store.db.BeginTx(ctx, nil)
+	if err != nil {
+		return err
+	}
+	q := New(tx)
+	err = fn(q)
+	if err != nil {
+		if rbErr := tx.Rollback(); rbErr != nil {
+			return fmt.Errorf("tx error: %v, rb error: %v", err, rbErr)
+		}
+		return err
+	}
+	return tx.Commit()
+}
+
+// addMoney adds a specified amount of money to an account.
 func addMoney(
 	ctx context.Context,
 	q *Queries,
@@ -115,12 +123,15 @@ func addMoney(
 		ID:     accountID1,
 		Amount: amount1,
 	})
+
 	if err != nil {
 		return
 	}
+
 	account2, err = q.AddAccountBalance(ctx, AddAccountBalanceParams{
 		ID:     accountID2,
 		Amount: amount2,
 	})
+
 	return
 }
