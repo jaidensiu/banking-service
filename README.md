@@ -1,10 +1,10 @@
 # Banking Service
 
-![Gopher Kubernetes](images/gopher_k8s.png)
+![Gopher in a factory](images/go_factory.png)
 
 ## Project details
 
-A banking web service for secure account management, balance tracking, and money transfers. This project is currently in construction.
+A backend web service for secure account management, balance tracking, and money transfers. This project is currently in construction.
 
 ## Tech stack
 
